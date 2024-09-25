@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Simple web page Template</title>
+    <link rel="stylesheet" href="/style_adminHome.css">
+    <script>
+        function date(){
+            const date = new Date();
+            const time = date.toLocaleTimeString();
+            document.getElementById("date").innerHTML=time;
+        }
+        setInterval(date,1000);
+        document.addEventListener("DOMContentLoaded",date);
+    </script>
+    <style>
+        form {
+            padding: 20px;
+        }
+        form input {
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+        form select {
+            font-size: 12px;
+            margin-bottom: 17px;
+	    
+        }
+        body{
+    background-position: 0px -100px;
+    background: url('../assets/images/image4.jpg') center/cover no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+}
+    </style>
+</head>
+ 
+<body>
+    <nav class="navbar background">
+        <div class="logo">
+            <img src= "../assets/images/Helping hands logo.png"
+                 style="height: 50px;"
+                 alt="Logo">
+        </div>
+        <ul class="nav-list">
+	    <li><a href="/adminHome">Manage User</a></li>
+	    <li><a href="/managePost"><u>Manage Post</u></a></li>
+        </ul>
+        <div class="rightnav">
+            <p style="color: #fff;">{{user}}</p>
+            <button class="btn btn-sm" (click) = "logout()"
+ >Logout</button>
+        </div>
+    </nav>
+        <div class="left-bar" style="width: 20%; height: 700px; float:left;background-position: 0px -100px; background:#03124F;opacity:0.8;"> 
+        <form #form="ngForm" (ngSubmit)="delete(form)"> 
+		<div>
+		<input type="text" placeholder="Post Name" name="email" ngModel #email="ngModel">
+		<button style="background-color: red; color: #fff;" >search</button>
+		</div>
+        <input type="submit" value="Delete" style="background-color: red; color: #fff;">
+        {{msg}}
+        </form>
+        
+        </div>  
+        <div style="width: 15%; height: 700px; float:right;background-position: 0px -100px; background:#03124F;opacity:0.8;">  
+            
+        </div>  
+        <div style="background: #fff; ;">
+            <form style="background: #fff;" #form="ngForm">
+    
+            <div *ngFor="let post of needys">
+              <!--<img [src]="game.imageUrl" alt="Game Image">-->
+              <div>
+                <p style="font-size: 20px;">Oname:{{ post.oname }} Pname:{{post.pname}} Email:{{post.email}} description:{{post.description}}</p>
+                <hr/>
+              </div>
+            </div>
+        </form>
+        {{msg1}}
+        </div>
+
+</body>
+ 
+</html>
+

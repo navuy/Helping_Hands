@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Simple web page Template</title>
+    <link rel="stylesheet" href="/Helper_home_style.css">
+    <style>
+        form {
+            padding: 20px;
+        }
+        form input {
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+        form select {
+            font-size: 12px;
+            margin-bottom: 17px;
+	    
+        }
+        body{
+    background-position: 0px -100px;
+    background: url('../assets/images/image4.jpg') center/cover no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+}
+    </style>
+</head>
+ 
+<body>
+    <nav class="navbar background">
+        <div class="logo">
+            <img src= "../assets/images/Helping hands logo.png"
+                 style="height: 50px;"
+                 alt="Logo">
+        </div>
+        <ul class="nav-list">
+            <li><a href="/helperHome">Posts</a></li>
+	    <li><a href="/transaction"><u>Transaction History</u></a></li>
+        </ul>
+        <div class="rightnav">
+            <p style="color: #fff;">{{user}}</p>
+            <p style="color: #fff;">Balance: {{balance | dollarPipe}}</p>
+            <button class="btn btn-sm" (click) = "logout()" appHighlight>Logout</button>
+        </div>
+    </nav>
+        <div style="background: url('../assets/images/image4.jpg') center/cover no-repeat;">
+        <div class="left-bar" style="width: 20%; height: 700px; float:left;background-position: 0px -100px; background:#03124F;opacity:0.9;"> 
+        <form #form1="ngForm"> 
+		<div>
+		</div>
+        
+        </form>
+        {{msg1}}
+        </div>  
+        <div style="width: 15%; height: 700px; float:right;background-position: 0px -100px; background:#03124F;opacity:0.8;">  
+            
+        </div>
+        
+        
+        <div  >
+            <form style="background-color: #fff;" #form="ngForm">
+    
+            <div *ngFor="let post of posts">
+              <!--<img [src]="game.imageUrl" alt="Game Image">-->
+              <div class="inline">
+                <span style="display: inline;">
+                <p style="color: indigo;" class="inline">{{ post.pname }}</p>
+                <p class="inline"> Email:&nbsp;{{post.oemail}} &nbsp;Amount :</p>
+                <p id="p2" class="inline" style="color: green;">&nbsp;{{ post.amount }}</p>
+                <hr/>
+              </span>
+              </div>
+            </div>
+        </form>
+        </div>
+    </div>
+        
+          
+
+</body>
+ 
+</html>
+

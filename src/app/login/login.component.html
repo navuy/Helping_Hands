@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancier Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('../assets/images/quino-al-mBQIfKlvowM-unsplash.jpg') center/cover no-repeat;
+            background-color: rgba(0,0,0, 0.5); /* Background overlay */
+            background-position: 0px -200px;
+        }
+
+        .login-container {
+            background-color: rgba(151, 146, 191, 0.95);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 12px;
+            width: 400px;
+            text-align: center;
+            animation: slide-in 0.6s ease-out;
+            opacity: 0.9;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333333;
+            font-size: 28px;
+	    
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 18px;
+	    
+        }
+
+        .login-form button {
+            background-color: #3498db;
+            color: #ffffff;
+            margin-top: 10px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+	     
+        }
+
+        .login-form button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome Back to<br/>Helping Hands</h2>
+        <form #form="ngForm" (ngSubmit)="login(form)" class="login-form">
+            <input type="text" placeholder="Username" name="email" id="email" ngModel #email="ngModel" required>
+            <input type="password" placeholder="Password" name="password" ngModel #password="ngModel" id="password" required>
+            <button type="submit">Login</button>
+            {{msg}}
+        </form>
+    </div>
+    <h2>{{msg}}</h2>
+</body>
+</html>
+

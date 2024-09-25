@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('../assets/images/image4.jpg') center/cover no-repeat; /* Replace 'smiley.png' with the path to your smiley emoji image */
+            background-position: 0px -150px;
+        }
+        form {
+            width: 320px; /* Set a fixed width for the form */
+            height: 300px;
+            background-color: #03124F; /* Adjust the background color transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+	        opacity: 0.8
+        }
+        label {
+            display: block;
+            color:#fff;
+            margin-bottom: 8px;
+ 	    font-size: 16px
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            grid-column: span 2; /* Make the button span both columns */
+            background-color: #0e3bee;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+	    font-size:12px;
+        }
+  	.login-container {
+            animation: slide-in 0.6s ease-out;
+        }
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-700px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    
+
+        
+    </style>
+</head>
+<body>
+    <form #form="ngForm" (ngSubmit)="createPost(form)" >
+        <label for="firstName">Organization Name:</label>
+        <input type="text" id="Name" name="oname" ngModel #oname="ngModel" required>
+
+
+        <label for="address">Description:</label>
+        <textarea id="address" name="description" ngModel #description="ngModel" rows="4" required></textarea>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" ngModel #phone="ngModel" required>
+
+        <label for="city">Post Name:</label>
+        <input type="text" id="country" name="mprice" ngModel #mprice="ngModel" required>
+        
+	<button type="submit" >Register</button>
+    {{msg}}
+    </form>
+    
+</body>
+</html>
+

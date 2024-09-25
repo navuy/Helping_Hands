@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('../assets/images/image3.jpg') center/cover no-repeat; /* Replace 'smiley.png' with the path to your smiley emoji image */
+            background-position: 0px -150px;
+        }
+        form {
+            width: 320px; /* Set a fixed width for the form */
+            height: 550px;
+            background-color: #F9E0C9; /* Adjust the background color transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+	        opacity: 0.9
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+ 	    font-size: 16px
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            grid-column: span 2; /* Make the button span both columns */
+            background-color: #FAA658;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+	    font-size:12px;
+        }
+  	.login-container {
+            animation: slide-in 0.6s ease-out;
+        }
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-700px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    
+
+        
+    </style>
+</head>
+<body>
+    <form #form="ngForm" (ngSubmit)="insert(form)" class="login-container">
+        <label for="firstName">Organization Name:</label>
+        <input type="text" id="name" name="oname" ngModel #oname="ngModel" required>
+
+        <!-- Add more form fields here -->
+	<label for="type">Organization type:</label>
+        <select id="type" name="otype" ngModel #otype="ngModel" required>
+            <option value="oldage home">Oldage Home</option>
+            <option value="orphanage">Orphanage</option>
+            <option value="specially abled school">Specially abled school</option>
+	    <option value="Disaster relief organization">Disaster relief organization</option>
+	    <option value="other">Other</option>
+        </select>
+        <label for="fundedby">Funded By:</label>
+        <select id="fundedby " ngModel #fundedby="ngModel" name="fundedby" required>
+            <option value="government">Government</option>
+            <option value="private">Private</option>
+        </select>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" ngModel #address="ngModel" rows="4" required></textarea>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" ngModel #phone="ngModel" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" ngModel #country="ngModel" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" ngModel #email="ngModel" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" ngModel #password="ngModel" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        
+         
+	<label for="file">Submit Proof:</label>
+	<input type="file" id="file" name="b1" value="browse" >
+	<button type="submit" name="submit">Register</button>
+    {{msg}}
+    </form>
+</body>
+</html>
+

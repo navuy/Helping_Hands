@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.9
+}
+ 
+.background {
+    background: white;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+ 
+.nav-list {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+ 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.logo img {
+    width: 80px;
+    border-radius: 50px;
+}
+ 
+.nav-list li {
+    list-style: none;
+    padding: 30px 30px;
+    padding: 10px;
+    font-size: 15px
+}
+ 
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+}
+ 
+.nav-list li a:hover {
+    color: grey;
+}
+ 
+.rightnav {
+    width: 30%;
+    text-align: right;
+}
+ 
+
+ 
+.btn {
+    padding: 8px 20px;
+    margin: 7px 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: none;
+    color: black;
+    cursor: pointer;
+    font-size: 10px;
+    opacity: 1;
+}
+ 
+.btn1 {
+    background-color: #FAA658;
+    padding: 8px 20px;
+    margin: 7px 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 1;
+}
+.btn2 {
+    background-color:#FAA658 ;
+    padding: 8px 20px;
+    margin: 7px 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 1;
+}
+
+ 
+.section {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    margin: auto;
+}
+ 
+
+ 
+ 
+.rightnav {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+}
+.signup {
+            animation: slide-in 0.6s ease-out;
+        }
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+ 
+
+  div.transbox2 {
+   border-radius: 25px;
+  width : 320px;
+  height : 320px;
+  margin: 50px;
+  background-color: #F9E0C9;
+  opacity: 0.9;
+  position : absolute;
+  left : 60%;
+  top: 20%;
+}
+
+  div.transbox1 {
+  border-radius: 25px;
+  width : 320px;
+  height : 320px;
+  margin: 50px;
+  background-color: #F9E0C9;
+  opacity: 0.9;
+  position : absolute;
+  left : 10%;
+  top: 20%;
+}
+
+body{
+    background: url('/image3.jpg') center/cover no-repeat;
+    background-position: 0px -150px;
+}
+.btn:hover {
+  color: grey;
+}
+.btn1:hover {
+  color: white;
+}
+.btn2:hover {
+  color: white;
+}
